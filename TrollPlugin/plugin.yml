@@ -1,0 +1,46 @@
+name: Troll
+version: 1.0
+description: Trolls another player.
+author: LeChosenOne
+
+main: stuff.LeChosenOne.Troll.Troll
+             
+commands:
+  fish:
+    description: Spams a target with fish and forces them to hold a fish.
+    permission: troll.fish
+    usage: /fish target
+  curse:
+    description: Sets a player's health to 1 heart.
+    permission: troll.curse
+    usage: /curse target
+  ignite:
+    description: Sets a player on fire.
+    permission: troll.ignite
+    usage: /ignite target  
+  starve:
+    description: Sets a player's hunger bar very low.
+    permission: troll.starve
+    usage: /starve target
+    
+permissions:
+  troll.*:
+    description: Total access to troll commands
+    children:
+      troll.fish: true
+      troll.curse: true
+      troll.ignite: true
+      troll.starve: true
+    troll.fish:
+      description: Access to /fish command
+      default: true
+    troll.curse:
+      description: Access to /curse command
+      default: true
+    troll.ignite:
+      description: Access to /ignite command
+      default: true
+    troll.starve:
+      description: Access to /starve command
+      default: true
+             
