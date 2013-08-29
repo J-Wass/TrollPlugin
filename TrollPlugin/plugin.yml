@@ -3,7 +3,7 @@ version: 1.0
 description: Trolls another player.
 author: LeChosenOne
 
-main: stuff.LeChosenOne.Troll.Troll
+main: stuff.LeChosenOne.Me.Troll
              
 commands:
   fish:

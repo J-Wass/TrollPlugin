@@ -1,4 +1,4 @@
-package stuff.LeChosenOne.Troll;
+package stuff.LeChosenOne.Me;
 
 import java.util.logging.Logger;
 import org.bukkit.ChatColor;
@@ -39,6 +39,11 @@ public class Troll extends JavaPlugin
             }
             else if(args.length == 1)
             {
+                if(player.getServer().getPlayer(args[0]) == null)
+                {
+                    player.sendMessage("Could not find that player!"); 
+                    return true;
+                }
                 Player target = player.getServer().getPlayer(args[0]);
                 target.setHealth(1);
                 player.sendMessage(ChatColor.RED + "Target successfully cursed.");
@@ -53,6 +58,11 @@ public class Troll extends JavaPlugin
             }
             else if(args.length == 1)
             {
+                if(player.getServer().getPlayer(args[0]) == null)
+                {
+                    player.sendMessage("Could not find that player!"); 
+                    return true;
+                }
                 Player target = player.getServer().getPlayer(args[0]);
                 PlayerInventory inv = target.getInventory();
                 ItemStack fish = new ItemStack(Material.RAW_FISH, 64);
@@ -70,9 +80,14 @@ public class Troll extends JavaPlugin
             }
             else if(args.length == 1)
             {
+                if(player.getServer().getPlayer(args[0]) == null)
+                {
+                    player.sendMessage("Could not find that player!"); 
+                    return true;
+                }
                 Player target = player.getServer().getPlayer(args[0]);
-                target.setFireTicks(1);
-                 player.sendMessage(ChatColor.RED + "Target successfully ignited.");
+                target.setFireTicks(200);
+                player.sendMessage(ChatColor.RED + "Target successfully ignited.");
             }
             return true;
         }
@@ -83,7 +98,12 @@ public class Troll extends JavaPlugin
                 player.sendMessage(ChatColor.RED + "Please input a target.");
             }
             else if(args.length == 1)
-            {
+            {                
+                if(player.getServer().getPlayer(args[0]) == null)
+                {
+                    player.sendMessage("Could not find that player!"); 
+                    return true;
+                }
                 Player target = player.getServer().getPlayer(args[0]);
                 target.setFoodLevel(0);
                 player.sendMessage(ChatColor.RED + "Target successfully starved.");
